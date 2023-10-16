@@ -1,0 +1,30 @@
+Display
+
+<Display>:
+    BoxLayout:
+        orientation: "vertical"
+        Image:
+            id: image
+            size_hint: 1,0.35
+        GridLayout:
+            cols: 2
+            size_hint: 1,0.15
+            TextInput:
+                id: image_load
+            Button:
+                text: "Load Image"
+                on_release: root.advance()
+            Button:
+                id: sepia
+                text: "Sepia"
+                source: root.sepia()
+            Button:
+                text: "Inverted"
+            Button:
+                text: "Brighten Image"
+            Button:
+                text: "Red"
+            Button:
+                text: "Vertical Lines"
+            Button:
+                text: "Pixelate"
