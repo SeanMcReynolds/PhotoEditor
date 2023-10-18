@@ -11,20 +11,29 @@ Display
             size_hint: 1,0.15
             TextInput:
                 id: image_load
+                text_hint: "Enter a file name (ex: cat.jpg)"
             Button:
                 text: "Load Image"
-                on_release: root.advance()
+                on_release: root.load()
             Button:
                 id: sepia
                 text: "Sepia"
-                source: root.sepia()
+                on_release: root.sepia()
             Button:
+                id: inverted
                 text: "Inverted"
+                on_release: root.inverted()
             Button:
+                id: brighten
                 text: "Brighten Image"
+                on_release: root.brighten_image()
             Button:
+                id: red
                 text: "Red"
+                on_release: root.red()
             Button:
+                id: vertical
                 text: "Vertical Lines"
+                on_release: root.vertical_lines()
             Button:
                 text: "Pixelate"
