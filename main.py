@@ -7,32 +7,32 @@ class PhotoEditorApp(App):
     pass
 
 class Display(Screen):
-    # coordinates = []
-    # def on_touch_down(self, touch):
-    #     x, y = touch.x, touch.y
-    #     self.coordinates.append(int(x))
-    #     self.coordinates.append(int(y))
-    #     if len(self.coordinates) > 6:
-    #         self.coordinates = self.coordinates[2:]
-    #     touch.push()
-    #     touch.apply_transform_2d(self.to_local)
-    #     ret = super(RelativeLayout, self).on_touch_down(touch)
-    #     touch.pop()
-    #     return ret
-    #
-    # def on_touch_up(self, touch):
-    #     x, y = touch.x, touch.y
-    #     self.coordinates.append(int(x))
-    #     self.coordinates.append(int(y))
-    #     if len(self.coordinates) > 6:
-    #         self.coordinates = self.coordinates[2:]
-    #     touch.push()
-    #     touch.apply_transform_2d(self.to_local)
-    #     ret = super(RelativeLayout, self).on_touch_up(touch)
-    #     touch.pop()
-    #     return ret
-    #
-    #
+    coordinates = []
+    def on_touch_down(self, touch):
+        x, y = touch.x, touch.y
+        self.coordinates.append(int(x))
+        self.coordinates.append(int(y))
+        if len(self.coordinates) > 6:
+            self.coordinates = self.coordinates[2:]
+        touch.push()
+        touch.apply_transform_2d(self.to_local)
+        ret = super(RelativeLayout, self).on_touch_down(touch)
+        touch.pop()
+        return ret
+
+    def on_touch_up(self, touch):
+        x, y = touch.x, touch.y
+        self.coordinates.append(int(x))
+        self.coordinates.append(int(y))
+        if len(self.coordinates) > 6:
+            self.coordinates = self.coordinates[2:]
+        touch.push()
+        touch.apply_transform_2d(self.to_local)
+        ret = super(RelativeLayout, self).on_touch_up(touch)
+        touch.pop()
+        return ret
+
+
     def load(self):
         self.ids.image.source = self.ids.image_load.text
 
